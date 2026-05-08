@@ -16,9 +16,10 @@
 body{
 margin:0;
 font-family:'Inter',sans-serif;
-background:#f7f2e9;
+background:#0f1a2b;
 height:100vh;
 overflow:hidden;
+color:#e6ecf5;
 }
 
 #app{
@@ -34,11 +35,11 @@ width:90%;
 max-width:420px;
 max-height:90vh;
 overflow:auto;
-background:#fff;
+background:#16233a;
 border-radius:26px;
 padding:40px 32px;
 text-align:center;
-box-shadow:0 30px 70px rgba(0,0,0,.15);
+box-shadow:0 30px 70px rgba(0,0,0,.45);
 opacity:0;
 transform:scale(.94) translateY(40px);
 transition:.7s cubic-bezier(.19,1,.22,1);
@@ -46,7 +47,7 @@ pointer-events:none;
 }
 
 .card::-webkit-scrollbar{width:6px}
-.card::-webkit-scrollbar-thumb{background:#e8b4bc;border-radius:10px}
+.card::-webkit-scrollbar-thumb{background:#2e4a73;border-radius:10px}
 
 .card.active{
 opacity:1;
@@ -57,6 +58,7 @@ pointer-events:auto;
 h1,h2{
 font-family:'DM Serif Display',serif;
 margin:0 0 14px;
+color:#ffffff;
 }
 
 p{font-size:15px;line-height:1.7;opacity:.85}
@@ -65,7 +67,8 @@ button{
 padding:12px 26px;
 border:none;
 border-radius:999px;
-background:#e8b4bc;
+background:#243b5a;
+color:#fff;
 cursor:pointer;
 margin-top:18px;
 font-size:15px;
@@ -73,7 +76,7 @@ transition:.25s;
 }
 button:hover{
 transform:scale(1.05);
-box-shadow:0 10px 25px rgba(232,180,188,.4);
+box-shadow:0 10px 25px rgba(36,59,90,.6);
 }
 
 /* PIN */
@@ -87,9 +90,9 @@ margin:25px 0;
 width:18px;
 height:18px;
 border-radius:50%;
-border:2px solid #e8b4bc;
+border:2px solid #3b5c88;
 }
-.dot.fill{background:#e8b4bc}
+.dot.fill{background:#3b5c88}
 
 .keypad{
 display:grid;
@@ -110,8 +113,8 @@ gap:12px;
 margin-top:20px;
 }
 #options button{
-background:#f7f2e9;
-border:1px solid #e8b4bc;
+background:#1b2c47;
+border:1px solid #3b5c88;
 }
 
 .score-box{
@@ -129,8 +132,8 @@ transition:.3s;
 
 .correctAnim{
 animation:pop .4s ease;
-background:#c7f5d9 !important;
-border-color:#8ee6b2 !important;
+background:#1f4f3c !important;
+border-color:#2fa37a !important;
 }
 @keyframes pop{
 0%{transform:scale(.9)}
@@ -140,8 +143,8 @@ border-color:#8ee6b2 !important;
 
 .wrongAnim{
 animation:shake .4s;
-background:#ffd6d6 !important;
-border-color:#ff9b9b !important;
+background:#4a1f2a !important;
+border-color:#a34a5f !important;
 }
 
 @keyframes shake{
@@ -152,12 +155,12 @@ border-color:#ff9b9b !important;
 
 /* TIMER */
 .lovebox{
-background:linear-gradient(145deg,#fff,#fdecef);
+background:linear-gradient(145deg,#1b2c47,#142238);
 border-radius:22px;
 padding:20px;
 margin-bottom:25px;
-box-shadow:0 12px 35px rgba(232,180,188,.25);
-border:1px solid rgba(232,180,188,.25);
+box-shadow:0 12px 35px rgba(0,0,0,.4);
+border:1px solid rgba(59,92,136,.3);
 }
 
 .timer-title{
@@ -170,7 +173,7 @@ opacity:.6;
 font-family:'DM Serif Display',serif;
 font-size:28px;
 margin-top:8px;
-color:#c97d88;
+color:#7fa8e6;
 letter-spacing:1px;
 animation:pulse 2.5s infinite;
 }
@@ -184,9 +187,9 @@ display:flex;
 align-items:center;
 justify-content:center;
 border-radius:20px;
-border:2px dashed #e8b4bc;
+border:2px dashed #3b5c88;
 cursor:pointer;
-background:#fff8f9;
+background:#1a2a44;
 transition:.3s;
 }
 .reveal-box:hover{transform:scale(1.02)}
@@ -199,7 +202,7 @@ font-size:18px;
 line-height:1.3;
 letter-spacing:.4px;
 text-align:left;
-color:black;
+color:#e6ecf5;
 opacity:.95;
 min-height:100px;
 animation:fadeInText 1.2s ease;
@@ -211,7 +214,7 @@ text-align:right;
 font-family:'Playfair Display',serif;
 font-size:20px;
 letter-spacing:1px;
-color:#b07c83;
+color:#8faedc;
 animation:fadeInText 1.8s ease;
 }
 
@@ -240,8 +243,8 @@ pointer-events:none;
 
 <!-- welcome -->
 <section class="card active">
-<h1>Special gift</h1>
-<p>For someone i love the most. <br>But you have to unlock it.</p>
+<h1>Dariku, untuk kita</h1>
+<p>Buka perlahan hadiah dariku ya! semoga kamu suka</p>
 <button onclick="next()">Unlock</button>
 </section>
 
@@ -282,7 +285,7 @@ Points: <span id="score">0</span> / 3
 <!-- final -->
 <section class="card">
 
-<h1>Another Month of Us</h1>
+<h1>Masih denganmu, Jantungku</h1>
 
 <div class="lovebox">
 <div class="timer-title">TIME WITH YOU</div>
@@ -336,7 +339,7 @@ if(page===2)loadQuestion();
 ================================================= */
 
 let pinInput = '';
-const correctPin = '1402';
+const correctPin = '0905';
 const pinDisplay = document.getElementById("pin");
 
 function renderDots(){
@@ -384,9 +387,9 @@ function checkPin(){
 ================================================= */
 
 const questions=[
-{q:"When did we first meet? ", options:["14 February"," 24 January","22 January"],correct:2},
-{q:"Who loves the most?", options:["You","100% me","Both"],correct:2},
-{q:"What’s on my mind most of the time?", options:["Anime","Someone else","You (my pretty girlfriend"],correct:2}
+{q:"Kapan pertama kali kita bertemu?", options:["December","February","May"],correct:2},
+{q:"Apa hal kecil yang menurutmu mereprentasikan 'kita'?", options:["Lucu","Manis","Hangat", "All of them"],correct:3},
+{q:"Siapa yang memiliki tangki cinta yang lebih banyak?", options:["Aku","Kita ","Kamu"],correct:1}
 ];
 
 let currentQ = 0;
@@ -451,7 +454,7 @@ function checkAnswer(i,btn){
 
 function startTimer(){
 
-    const start = new Date("2026-01-22T00:00:00");
+    const start = new Date("2025-05-09T00:00:00");
 
     setInterval(()=>{
 
@@ -485,11 +488,9 @@ function revealMemory(el){
     `;
 
     const text = `
-      Even all the beautiful words in the world still wouldn’t be enough to explain how much you mean to me. Yet here you are, right in my life, and somehow that alone says everything. I admire the little things about you—the way you care about me, the way you talk, and how your eyes light up when you’re excited, especially when it’s with me. 
+      Hallo kanyaahku, mungkin kamu bosan mendengarkanku berkata "aku tidak menyangka" tapi sungguh, aku tidak menyangka kita sudah sampai di bulan ini, dari obrolan-obrolan kecil yang awalnya biasa saja, sampai sekarang menjadi bagian dari hal yang selalu aku tunggu, atau mungkin kamu tunggu juga. Dua bulan mungkin terdengar sebentar bagi banyak orang, tapi buat aku, ini sudah cukup untuk membuatku sadar kalau kehadiranmu membawa banyak hal baik, kalau dipikir-pikir lucu rasanya, bagaimana dua orang yang dipisahkan jarak bisa tetap merasa dekat setiap harinya, dan meski kita tidak selalu ada di tempat yang sama, aku suka cara kita tetap menemukan rumah di satu sama lain.
 
-      With you, I’ve found a kind of peace I didn’t even know I was looking for. It’s a kind of comfort I didn’t know I needed until I found it in you. It’s something I can’t find anywhere else, no matter how hard I try. Every moment with you, no matter how small, feels important and meaningful.
-      
-      Thank you for being here with me, for every moment, every word, and every feeling we’ve shared. Happy 2nd mensiversary, sayangku. I’m so grateful for you, today and always. ❤️  
+    Terima kasih ya, sudah memilih tinggal, sudah sabar dengan segala kurangku, dan sudah membuat jarak terasa tidak terlalu menakutkan untuk dijalani, walau hanya lewat layar, lewat obrolan konyol, atau hal-hal kecil lainnya, aku rasa kita berhasil membuat hubungan ini selalu terasa hangat. Aku tidak tahu sejauh apa kita akan bersama, tapi untuk hari ini, aku merasa bersyukur karena masih denganmu, dan di antara banyak hal yang datang dan pergi, kita masih memilih untuk tetap di sini. Selamat untuk yang ke 2, Jantungku 🫀
       `;
 
     const paragraphs = text.trim().split(/\n\s*\n/);
